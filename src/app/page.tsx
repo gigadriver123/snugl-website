@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Baby, Heart, Moon, Smartphone, TrendingUp, Users } from "lucide-react";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
           </p>
 
           {/* Store Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
               href="#"
               className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-colors shadow-lg"
@@ -64,7 +65,100 @@ export default function Home() {
               </div>
             </a>
           </div>
+
+          {/* Quick Links */}
+          <div className="flex gap-6 justify-center text-sm text-gray-600 dark:text-gray-400">
+            <Link href="/features" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+              Features
+            </Link>
+            <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+              FAQ
+            </Link>
+          </div>
         </motion.div>
+      </section>
+
+      {/* Feature Highlights */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Everything you need for your baby
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Track feeding, sleep, diapers and more with smart AI predictions
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Baby className="w-12 h-12" />,
+                title: "Smart Tracking",
+                description: "Track feedings, sleep, diapers and growth with AI-powered predictions for your baby's next needs"
+              },
+              {
+                icon: <Users className="w-12 h-12" />,
+                title: "Family Sharing",
+                description: "Share real-time updates with partners, grandparents or caregivers. Everyone stays in sync"
+              },
+              {
+                icon: <Moon className="w-12 h-12" />,
+                title: "Sleep Insights",
+                description: "Detailed sleep statistics with WHO growth charts and milestone tracking"
+              },
+              {
+                icon: <Heart className="w-12 h-12" />,
+                title: "Milestones",
+                description: "Document your baby's development with photos and track important milestones"
+              },
+              {
+                icon: <TrendingUp className="w-12 h-12" />,
+                title: "Statistics",
+                description: "Comprehensive charts and trends to understand your baby's patterns"
+              },
+              {
+                icon: <Smartphone className="w-12 h-12" />,
+                title: "iOS & Android",
+                description: "Live Activities on iOS, rich notifications on Android, offline mode on both"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-2xl"
+              >
+                <div className="text-blue-600 dark:text-blue-400 mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/features"
+              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              View All Features
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
@@ -83,6 +177,12 @@ export default function Home() {
 
             {/* Links */}
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+              <Link href="/features" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+                Features
+              </Link>
+              <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+                FAQ
+              </Link>
               <Link href="/agb" className="hover:text-gray-900 dark:hover:text-white transition-colors">
                 Terms
               </Link>

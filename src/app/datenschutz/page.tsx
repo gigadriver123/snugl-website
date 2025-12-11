@@ -205,6 +205,8 @@ export default function Privacy() {
             <Image src="/logo.svg" alt="SNUGL" width={80} height={18} />
           </Link>
           <div className="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <Link href="/features" className="hover:text-gray-900 dark:hover:text-white">Features</Link>
+            <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white">FAQ</Link>
             <Link href="/agb" className="hover:text-gray-900 dark:hover:text-white">Terms</Link>
             <Link href="/datenschutz" className="hover:text-gray-900 dark:hover:text-white">Privacy</Link>
             <Link href="/" className="hover:text-gray-900 dark:hover:text-white">Home</Link>
