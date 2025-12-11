@@ -3,105 +3,139 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Baby, Bell, Bot, Calendar, Camera, Cloud, Globe, Heart, Lock, Moon, Share2, TrendingUp, Users, Utensils } from "lucide-react";
+import { TabNavigation } from "@/components/TabNavigation";
+import { useState } from "react";
 
 export default function Features() {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const categories = [
+    { id: "all", label: "All Features" },
+    { id: "tracking", label: "Tracking" },
+    { id: "smart", label: "Smart Features" },
+    { id: "family", label: "Family & Sharing" },
+  ];
+
   const features = [
     {
       icon: <Utensils className="w-8 h-8" />,
       title: "Feeding Tracker",
-      description: "Track breastfeeding (with left/right timer), bottle feeding (ml), and solid food. Complete statistics and smart predictions."
+      description: "Track breastfeeding (with left/right timer), bottle feeding (ml), and solid food. Complete statistics and smart predictions.",
+      category: "tracking"
     },
     {
       icon: <Moon className="w-8 h-8" />,
       title: "Sleep Tracking",
-      description: "Monitor night sleep and naps with timer. Get detailed statistics including day/night distribution, average duration, and AI-powered predictions for next sleep."
+      description: "Monitor night sleep and naps with timer. Get detailed statistics including day/night distribution, average duration, and AI-powered predictions for next sleep.",
+      category: "tracking"
     },
     {
       icon: <Baby className="w-8 h-8" />,
       title: "Diaper Tracking",
-      description: "Log wet, dirty, or both types of changes. Track frequency, patterns, and get smart predictions for the next change."
+      description: "Log wet, dirty, or both types of changes. Track frequency, patterns, and get smart predictions for the next change.",
+      category: "tracking"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Growth & Development",
-      description: "Record weight, height, and head circumference. View WHO growth charts with percentiles and track progress over time."
+      description: "Record weight, height, and head circumference. View WHO growth charts with percentiles and track progress over time.",
+      category: "tracking"
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Milestones",
-      description: "Track motor skills, language, social-emotional and cognitive development. Add photos and notes for each milestone by age group."
+      description: "Track motor skills, language, social-emotional and cognitive development. Add photos and notes for each milestone by age group.",
+      category: "tracking"
     },
     {
       icon: <Bot className="w-8 h-8" />,
       title: "Smart Predictions",
-      description: "Algorithm-based predictions for next feeding, sleep, and diaper change using statistical analysis and scientific data. Get confidence scores and personalized tips."
+      description: "Algorithm-based predictions for next feeding, sleep, and diaper change using statistical analysis and scientific data. Get confidence scores and personalized tips.",
+      category: "smart"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Family Sharing",
-      description: "Invite your partner to manage your babies together. All data syncs across devices so both parents stay up to date and can track together."
+      description: "Invite your partner to manage your babies together. All data syncs across devices so both parents stay up to date and can track together.",
+      category: "family"
     },
     {
       icon: <Baby className="w-8 h-8" />,
       title: "Twins Support",
-      description: "Link twins together for parallel tracking. Separate timers for each baby with quick switcher on every screen."
+      description: "Link twins together for parallel tracking. Separate timers for each baby with quick switcher on every screen.",
+      category: "family"
     },
     {
       icon: <Bell className="w-8 h-8" />,
       title: "Smart Notifications",
-      description: "Receive notifications for predicted feeding, sleep, and diaper times. Fully customizable - choose which predictions to get notified about and when."
+      description: "Receive notifications for predicted feeding, sleep, and diaper times. Fully customizable - choose which predictions to get notified about and when.",
+      category: "smart"
     },
     {
       icon: <Camera className="w-8 h-8" />,
       title: "Custom Logs",
-      description: "Create free entries for medications, doctor visits, temperature, symptoms, and more. Add notes and photos with automatic timestamps."
+      description: "Create free entries for medications, doctor visits, temperature, symptoms, and more. Add notes and photos with automatic timestamps.",
+      category: "tracking"
     },
     {
       icon: <Utensils className="w-8 h-8" />,
       title: "Recipe Library",
-      description: "Age-specific recipes for 6+, 9+, and 12+ months. Categories for breakfast, lunch, dinner, and snacks with allergy information."
+      description: "Age-specific recipes for 6+, 9+, and 12+ months. Categories for breakfast, lunch, dinner, and snacks with allergy information.",
+      category: "smart"
     },
     {
       icon: <Share2 className="w-8 h-8" />,
       title: "Parent Guide",
-      description: "Knowledge base with age-appropriate articles about sleep, nutrition, development, health, and safety. Practical tips with illustrations."
+      description: "Knowledge base with age-appropriate articles about sleep, nutrition, development, health, and safety. Practical tips with illustrations.",
+      category: "smart"
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Safety Measures",
-      description: "Checklists for sleep environment, changing table, bathing, car, kitchen, pets, and toys. Track progress with safety tips."
+      description: "Checklists for sleep environment, changing table, bathing, car, kitchen, pets, and toys. Track progress with safety tips.",
+      category: "smart"
     },
     {
       icon: <Calendar className="w-8 h-8" />,
       title: "Reminders",
-      description: "Set manual reminders for feeding, sleep, medications, and appointments. Daily, weekly, or monthly repetitions with push notifications."
+      description: "Set manual reminders for feeding, sleep, medications, and appointments. Daily, weekly, or monthly repetitions with push notifications.",
+      category: "smart"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Growth Spurts",
-      description: "Wonder Weeks integration with age-based spurts. Get descriptions, typical behaviors, and handling tips with progress indicators."
+      description: "Wonder Weeks integration with age-based spurts. Get descriptions, typical behaviors, and handling tips with progress indicators.",
+      category: "smart"
     },
     {
       icon: <Cloud className="w-8 h-8" />,
       title: "Cloud Storage",
-      description: "All data is securely stored in the cloud with automatic backup. Access your tracking history from any device, anytime."
+      description: "All data is securely stored in the cloud with automatic backup. Access your tracking history from any device, anytime.",
+      category: "smart"
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Multi-Language",
-      description: "Available in German, English, Spanish, and French. Localized UI texts, recipes, articles, and notifications."
+      description: "Available in German, English, Spanish, and French. Localized UI texts, recipes, articles, and notifications.",
+      category: "smart"
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Security & Privacy",
-      description: "Email/password, Google, and Apple Sign-In. Row Level Security, encrypted storage, and GDPR compliant. Your data stays private."
+      description: "Email/password, Google, and Apple Sign-In. Row Level Security, encrypted storage, and GDPR compliant. Your data stays private.",
+      category: "smart"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Statistics & Insights",
-      description: "Detailed analytics with bar charts, trend lines, and weekly overviews. Filter by last month or year for all activities."
+      description: "Detailed analytics with bar charts, trend lines, and weekly overviews. Filter by last month or year for all activities.",
+      category: "smart"
     }
   ];
+
+  const filteredFeatures = activeCategory === "all" 
+    ? features 
+    : features.filter(f => f.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -126,9 +160,18 @@ export default function Features() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Everything You Need for Your Baby
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
             Comprehensive tracking, smart predictions, and family sharing – designed for modern parents
           </p>
+          
+          {/* Tab Navigation */}
+          <div className="flex justify-center">
+            <TabNavigation 
+              tabs={categories} 
+              onTabChange={setActiveCategory}
+              defaultTab="all"
+            />
+          </div>
         </div>
       </section>
 
@@ -136,7 +179,7 @@ export default function Features() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+            {filteredFeatures.map((feature, index) => (
               <div
                 key={index}
                 className="bg-gradient-to-br from-slate-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
