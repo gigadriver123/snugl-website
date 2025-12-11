@@ -8,10 +8,10 @@ import NightSkyBackground from "@/components/NightSkyBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen relative">
       <NightSkyBackground />
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* Feature Highlights */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-100 dark:bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-gray-900/50 backdrop-blur-sm py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Logo klein */}

@@ -163,7 +163,7 @@ export default function NightSkyBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full z-0"
       style={{ background: "linear-gradient(to bottom, rgb(15, 23, 42), rgb(30, 41, 59), rgb(51, 65, 85))" }}
     />
   );
