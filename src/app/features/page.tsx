@@ -83,8 +83,8 @@ export default function Features() {
     },
     {
       icon: <Cloud className="w-8 h-8" />,
-      title: "Cloud Sync",
-      description: "Real-time synchronization with Supabase backend. Offline capability, automatic backup, and conflict resolution for simultaneous changes."
+      title: "Cloud Storage",
+      description: "All data is securely stored in the cloud with automatic backup. Access your tracking history from any device, anytime."
     },
     {
       icon: <Globe className="w-8 h-8" />,
