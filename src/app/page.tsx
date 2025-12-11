@@ -4,14 +4,30 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Baby, Heart, Moon, Smartphone, TrendingUp, Users } from "lucide-react";
-import NightSkyBackground from "@/components/NightSkyBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative">
-      <NightSkyBackground />
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 relative">
+      {/* Background SVGs */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <Image
+          src="/background_light.svg"
+          alt=""
+          fill
+          className="object-cover dark:hidden"
+          priority
+        />
+        <Image
+          src="/background_darkv2.svg"
+          alt=""
+          fill
+          className="object-cover hidden dark:block"
+          priority
+        />
+      </div>
+
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Feature Highlights */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent relative z-10">
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -164,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900/50 backdrop-blur-sm py-8 px-4 sm:px-6 lg:px-8 relative z-10">
+      <footer className="relative z-10 bg-gray-100/80 dark:bg-gray-900/80 backdrop-blur-sm py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Logo klein */}
