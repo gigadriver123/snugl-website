@@ -22,8 +22,8 @@ export default function FAQ() {
       answer: "Absolutely! With Family Sharing, you can create a family group and invite your partner, grandparents, or caregivers. Everyone sees real-time updates and can add entries. All data syncs instantly across all devices."
     },
     {
-      question: "How does the AI prediction work?",
-      answer: "Our AI analyzes your baby's historical patterns (feeding times, sleep schedules, etc.) combined with age-appropriate norms to predict when your baby might need the next feeding, sleep, or diaper change. The predictions get more accurate over time as you track more data."
+      question: "How do Smart Predictions work?",
+      answer: "Our advanced algorithms analyze your baby's historical patterns (feeding times, sleep schedules, etc.) combined with scientific research and statistical models to predict when your baby might need the next feeding, sleep, or diaper change. The predictions get more accurate over time as you track more data."
     },
     {
       question: "Is my data secure and private?",

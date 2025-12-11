@@ -9,7 +9,7 @@ export default function Features() {
     {
       icon: <Utensils className="w-8 h-8" />,
       title: "Feeding Tracker",
-      description: "Track breastfeeding (with left/right timer), bottle feeding (ml), and solid food. Live Activities on iOS lock screen, push notifications on Android. Complete statistics and AI predictions."
+      description: "Track breastfeeding (with left/right timer), bottle feeding (ml), and solid food. Live Activities on iOS lock screen, push notifications on Android. Complete statistics and smart predictions."
     },
     {
       icon: <Moon className="w-8 h-8" />,
@@ -33,8 +33,8 @@ export default function Features() {
     },
     {
       icon: <Bot className="w-8 h-8" />,
-      title: "AI Predictions",
-      description: "Smart predictions for next feeding, sleep, and diaper change based on historical data and baby's age. Get confidence scores and personalized tips."
+      title: "Smart Predictions",
+      description: "Algorithm-based predictions for next feeding, sleep, and diaper change using statistical analysis and scientific data. Get confidence scores and personalized tips."
     },
     {
       icon: <Users className="w-8 h-8" />,

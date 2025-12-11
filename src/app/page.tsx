@@ -92,7 +92,7 @@ export default function Home() {
               Everything you need for your baby
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Track feeding, sleep, diapers and more with smart AI predictions
+              Track feeding, sleep, diapers and more with smart algorithm-based predictions
             </p>
           </motion.div>
 
