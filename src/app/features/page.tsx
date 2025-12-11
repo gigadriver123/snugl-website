@@ -127,7 +127,7 @@ export default function Features() {
             Everything You Need for Your Baby
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Comprehensive tracking, AI-powered insights, and family sharing – all in one beautiful app
+            Comprehensive tracking, smart predictions, and family sharing – all in one beautiful app
           </p>
         </div>
       </section>
