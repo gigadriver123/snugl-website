@@ -30,7 +30,7 @@ export default function Home() {
 
           {/* Tagline */}
           <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 dark:text-white mb-4">
-            The Baby Tracker App for Modern Parents
+            Your Smart Companion for Baby Care
           </h1>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-xl mx-auto">
