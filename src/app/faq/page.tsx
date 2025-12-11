@@ -19,7 +19,7 @@ export default function FAQ() {
     },
     {
       question: "Can I share data with my partner?",
-      answer: "Absolutely! With Family Sharing, you can create a family group and invite your partner, grandparents, or caregivers. Everyone sees real-time updates and can add entries. All data syncs instantly across all devices."
+      answer: "Yes! You can invite your partner to join and manage your babies together. All tracking data syncs across both devices, so you can both add entries and stay updated on your baby's routines."
     },
     {
       question: "How do Smart Predictions work?",

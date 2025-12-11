@@ -39,7 +39,7 @@ export default function Features() {
     {
       icon: <Users className="w-8 h-8" />,
       title: "Family Sharing",
-      description: "Create family groups with real-time sync. Invite partners, grandparents, or caregivers. Role management with admin and member access."
+      description: "Invite your partner to manage your babies together. All data syncs across devices so both parents stay up to date and can track together."
     },
     {
       icon: <Baby className="w-8 h-8" />,
