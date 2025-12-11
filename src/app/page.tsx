@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Baby, Heart, Moon, Smartphone, TrendingUp, Users } from "lucide-react";
+import NightSkyBackground from "@/components/NightSkyBackground";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <NightSkyBackground />
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
