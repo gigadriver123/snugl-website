@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Baby, Bot, Calendar, Camera, Cloud, Globe, Heart, Lock, Moon, Share2, Smartphone, TrendingUp, Users, Utensils, Zap } from "lucide-react";
+import { Baby, Bell, Bot, Calendar, Camera, Cloud, Globe, Heart, Lock, Moon, Share2, TrendingUp, Users, Utensils } from "lucide-react";
 
 export default function Features() {
   const features = [
     {
       icon: <Utensils className="w-8 h-8" />,
       title: "Feeding Tracker",
-      description: "Track breastfeeding (with left/right timer), bottle feeding (ml), and solid food. Live Activities on iOS lock screen, push notifications on Android. Complete statistics and smart predictions."
+      description: "Track breastfeeding (with left/right timer), bottle feeding (ml), and solid food. Complete statistics and smart predictions."
     },
     {
       icon: <Moon className="w-8 h-8" />,
@@ -44,17 +44,12 @@ export default function Features() {
     {
       icon: <Baby className="w-8 h-8" />,
       title: "Twins Support",
-      description: "Link twins together for parallel tracking. Separate timers for each baby with quick switcher on every screen. Individual Live Activities per baby."
+      description: "Link twins together for parallel tracking. Separate timers for each baby with quick switcher on every screen."
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Live Activities (iOS)",
-      description: "See feeding and sleep timers on your lock screen. Dynamic Island support with interactive stop buttons for seamless tracking."
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Rich Notifications (Android)",
-      description: "Interactive push notifications with timers and action buttons. Material Design 3 with colored icons and instant updates."
+      icon: <Bell className="w-8 h-8" />,
+      title: "Smart Notifications",
+      description: "Receive notifications for predicted feeding, sleep, and diaper times. Fully customizable - choose which predictions to get notified about and when."
     },
     {
       icon: <Camera className="w-8 h-8" />,
@@ -179,14 +174,6 @@ export default function Features() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 dark:text-blue-400 mt-1">✓</span>
-                  <span>Live Activities on Lock Screen for feeding & sleep timers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 mt-1">✓</span>
-                  <span>Dynamic Island support with interactive controls</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 mt-1">✓</span>
                   <span>Face ID / Touch ID support</span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -204,10 +191,6 @@ export default function Features() {
                 Android Features
               </h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
-                  <span>Rich push notifications with interactive buttons</span>
-                </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
                   <span>Material Design 3 with colored icons</span>

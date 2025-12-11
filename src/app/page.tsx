@@ -126,7 +126,7 @@ export default function Home() {
               {
                 icon: <Smartphone className="w-12 h-12" />,
                 title: "iOS & Android",
-                description: "Live Activities on iOS, rich notifications on Android, offline mode on both"
+                description: "Native apps for both platforms with offline mode and customizable notifications"
               }
             ].map((feature, index) => (
               <motion.div

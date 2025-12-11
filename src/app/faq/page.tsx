@@ -34,8 +34,8 @@ export default function FAQ() {
       answer: "Yes! SNUGL supports multiple baby profiles. You can easily switch between babies using the baby switcher on every screen. We also have special Twins Support for tracking twins simultaneously with separate timers and activities."
     },
     {
-      question: "What are Live Activities (iOS)?",
-      answer: "Live Activities are iOS features that show your active feeding or sleep timer directly on your lock screen and in the Dynamic Island (iPhone 14 Pro and later). You can see the timer at a glance and stop it with interactive buttons without opening the app."
+      question: "Can I customize notifications?",
+      answer: "Yes! You can receive notifications for predicted feeding, sleep, and diaper times. Customize which predictions you want to be notified about and adjust notification timing to fit your preferences."
     },
     {
       question: "What languages does SNUGL support?",
