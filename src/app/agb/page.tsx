@@ -1,226 +1,159 @@
 "use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <Link href="/">
-            <Image
-              src="/logo.svg"
-              alt="SNUGL Logo"
-              width={120}
-              height={27}
-              priority
-            />
+    <div className="min-h-screen relative overflow-hidden bg-gray-50/50">
+      {/* Animated SVG Background - Back layers (moving left) */}
+      <div 
+        className="fixed inset-0 w-full min-h-screen pointer-events-none cloudLayerBack"
+      />
+      {/* Animated SVG Background - Front layer (moving right) */}
+      <div 
+        className="fixed inset-0 w-full min-h-screen pointer-events-none cloudLayerFront"
+      />
+      
+      <style jsx global>{`
+        .cloudLayerBack {
+          background-image: url(/bg_layer_back.svg);
+          background-size: 1206px auto;
+          background-repeat: repeat-x;
+          background-position: 0 bottom;
+          z-index: 0;
+          animation: moveLeft 100s linear infinite;
+        }
+        
+        .cloudLayerFront {
+          background-image: url(/bg_layer_front.svg);
+          background-size: 1206px auto;
+          background-repeat: repeat-x;
+          background-position: 0 bottom;
+          z-index: 1;
+          animation: moveRight 120s linear infinite;
+        }
+        
+        @keyframes moveLeft {
+          from {
+            background-position-x: 0;
+          }
+          to {
+            background-position-x: -1206px;
+          }
+        }
+        
+        @keyframes moveRight {
+          from {
+            background-position-x: 0;
+          }
+          to {
+            background-position-x: 1206px;
+          }
+        }
+      `}</style>
+
+      {/* Navigation */}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <nav className="flex items-center gap-1 p-1.5 bg-white/80 backdrop-blur-lg border border-white/20 rounded-full shadow-lg shadow-black/5 ring-1 ring-black/5">
+          <Link
+            href="/"
+            className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-300"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
           </Link>
-        </div>
-      </header>
+        </nav>
+      </div>
 
       {/* Content */}
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          Terms & Conditions
-        </h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-8">
-          Updated at 2025-11-25
-        </p>
+      <div className="relative z-10 pt-32 pb-20 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-sm border border-white/50"
+        >
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            Terms & Conditions
+          </h1>
+          <p className="text-gray-500 mb-8">
+            Updated at 2025-11-25
+          </p>
 
-        <div className="prose prose-gray dark:prose-invert max-w-none space-y-8 text-gray-600 dark:text-gray-300">
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">General Terms</h2>
-            <p className="leading-relaxed">
-              By accessing and placing an order with SNUGL, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and SNUGL.
-            </p>
-            <p className="leading-relaxed mt-4">
-              Under no circumstances shall SNUGL team be liable for any direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if SNUGL team or an authorized representative has been advised of the possibility of such damages. If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof.
-            </p>
-            <p className="leading-relaxed mt-4">
-              SNUGL will not be responsible for any outcome that may occur during the course of usage of our resources. We reserve the rights to change prices and revise the resources usage policy in any moment.
-            </p>
-          </section>
+          <div className="prose prose-gray max-w-none space-y-8 text-gray-600">
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">General Terms</h2>
+              <p className="leading-relaxed">
+                By accessing and placing an order with SNUGL, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and SNUGL.
+              </p>
+              <p className="leading-relaxed mt-4">
+                Under no circumstances shall SNUGL team be liable for any direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if SNUGL team or an authorized representative has been advised of the possibility of such damages. If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof.
+              </p>
+              <p className="leading-relaxed mt-4">
+                SNUGL will not be responsible for any outcome that may occur during the course of usage of our resources. We reserve the rights to change prices and revise the resources usage policy in any moment.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">License</h2>
-            <p className="leading-relaxed">
-              SNUGL grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the app strictly in accordance with the terms of this Agreement.
-            </p>
-            <p className="leading-relaxed mt-4">
-              These Terms & Conditions are a contract between you and SNUGL (referred to in these Terms & Conditions as &quot;SNUGL&quot;, &quot;us&quot;, &quot;we&quot; or &quot;our&quot;), the provider of the SNUGL website and the services accessible from the SNUGL website (which are collectively referred to in these Terms & Conditions as the &quot;SNUGL Service&quot;).
-            </p>
-            <p className="leading-relaxed mt-4">
-              You are agreeing to be bound by these Terms & Conditions. If you do not agree to these Terms & Conditions, please do not use the SNUGL Service. In these Terms & Conditions, &quot;you&quot; refers both to you as an individual and to the entity you represent. If you violate any of these Terms & Conditions, we reserve the right to cancel your account or block access to your account without notice.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">License</h2>
+              <p className="leading-relaxed">
+                SNUGL grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the app strictly in accordance with the terms of this Agreement.
+              </p>
+              <p className="leading-relaxed mt-4">
+                These Terms & Conditions are a contract between you and SNUGL (referred to in these Terms & Conditions as &quot;SNUGL&quot;, &quot;us&quot;, &quot;we&quot; or &quot;our&quot;), the provider of the SNUGL website and the services accessible from the SNUGL website (which are collectively referred to in these Terms & Conditions as the &quot;SNUGL Service&quot;).
+              </p>
+              <p className="leading-relaxed mt-4">
+                You are agreeing to be bound by these Terms & Conditions. If you do not agree to these Terms & Conditions, please do not use the SNUGL Service. In these Terms & Conditions, &quot;you&quot; refers both to you as an individual and to the entity you represent. If you violate any of these Terms & Conditions, we reserve the right to cancel your account or block access to your account without notice.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Definitions</h2>
-            <ul className="list-disc list-inside space-y-2">
-              <li><strong>Cookie:</strong> small amount of data generated by a website and saved by your web browser. It is used to identify your browser, provide analytics, remember information about you such as your language preference or login information.</li>
-              <li><strong>Company:</strong> when this policy mentions &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our,&quot; it refers to SNUGL, that is responsible for your information under this Terms & Conditions.</li>
-              <li><strong>Country:</strong> where SNUGL or the owners/founders of SNUGL are based, in this case is Germany.</li>
-              <li><strong>Device:</strong> any internet connected device such as a phone, tablet, computer or any other device that can be used to visit SNUGL and use the services.</li>
-              <li><strong>Service:</strong> refers to the service provided by SNUGL as described in the relative terms (if available) and on this platform.</li>
-              <li><strong>Third-party service:</strong> refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you.</li>
-              <li><strong>You:</strong> a person or entity that is registered with SNUGL to use the Services.</li>
-            </ul>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Definitions</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Cookie:</strong> small amount of data generated by a website and saved by your web browser. It is used to identify your browser, provide analytics, remember information about you such as your language preference or login information.</li>
+                <li><strong>Company:</strong> when this policy mentions &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our,&quot; it refers to SNUGL, that is responsible for your information under this Terms & Conditions.</li>
+                <li><strong>Country:</strong> where SNUGL or the owners/founders of SNUGL are based, in this case is Germany.</li>
+                <li><strong>Device:</strong> any internet connected device such as a phone, tablet, computer or any other device that can be used to visit SNUGL and use the services.</li>
+                <li><strong>Service:</strong> refers to the service provided by SNUGL as described in the relative terms (if available) and on this platform.</li>
+                <li><strong>Third-party service:</strong> refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you.</li>
+                <li><strong>You:</strong> a person or entity that is registered with SNUGL to use the Services.</li>
+              </ul>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Restrictions</h2>
-            <p className="leading-relaxed mb-4">You agree not to, and you will not permit others to:</p>
-            <ul className="list-disc list-inside space-y-2">
-              <li>License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the app or make the platform available to any third party.</li>
-              <li>Modify, make derivative works of, disassemble, decrypt, reverse compile or reverse engineer any part of the app.</li>
-              <li>Remove, alter or obscure any proprietary notice (including any notice of copyright or trademark) of SNUGL or its affiliates, partners, suppliers or the licensors of the app.</li>
-            </ul>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Restrictions</h2>
+              <p className="leading-relaxed mb-4">You agree not to, and you will not permit others to:</p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the app or make the platform available to any third party.</li>
+                <li>Modify, make derivative works of, disassemble, decrypt, reverse compile or reverse engineer any part of the app.</li>
+                <li>Remove, alter or obscure any proprietary notice (including any notice of copyright or trademark) of SNUGL or its affiliates, partners, suppliers or the licensors of the app.</li>
+              </ul>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Return and Refund Policy</h2>
-            <p className="leading-relaxed">
-              Thanks for shopping at SNUGL. We appreciate the fact that you like to buy the stuff we build. We also want to make sure you have a rewarding experience while you&apos;re exploring, evaluating, and purchasing our products.
-            </p>
-            <p className="leading-relaxed mt-4">
-              If, for any reason, You are not completely satisfied with any good or service that we provide, don&apos;t hesitate to contact us and we will discuss any of the issues you are going through with our product.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Return and Refund Policy</h2>
+              <p className="leading-relaxed">
+                Thanks for shopping at SNUGL. We appreciate the fact that you like to buy the stuff we build. We also want to make sure you have a rewarding experience while you&apos;re exploring, evaluating, and purchasing our products.
+              </p>
+              <p className="leading-relaxed mt-4">
+                If, for any reason, You are not completely satisfied with any good or service that we provide, don&apos;t hesitate to contact us and we will discuss any of the issues you are going through with our product.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Your Suggestions</h2>
-            <p className="leading-relaxed">
-              Any feedback, comments, ideas, improvements or suggestions (collectively, &quot;Suggestions&quot;) provided by you to SNUGL with respect to the app shall remain the sole and exclusive property of SNUGL.
-            </p>
-            <p className="leading-relaxed mt-4">
-              SNUGL shall be free to use, copy, modify, publish, or redistribute the Suggestions for any purpose and in any way without any credit or any compensation to you.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Cookies</h2>
-            <p className="leading-relaxed">
-              SNUGL uses &quot;Cookies&quot; to identify the areas of our website that you have visited. A Cookie is a small piece of data stored on your computer or mobile device by your web browser. We use Cookies to enhance the performance and functionality of our app but are non-essential to their use. However, without these cookies, certain functionality like videos may become unavailable or you would be required to enter your login details every time you visit the app as we would not be able to remember that you had logged in previously. Most web browsers can be set to disable the use of Cookies. However, if you disable Cookies, you may not be able to access functionality on our website correctly or at all. We never place Personally Identifiable Information in Cookies.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Changes To Our Terms & Conditions</h2>
-            <p className="leading-relaxed">
-              You acknowledge and agree that SNUGL may stop (permanently or temporarily) providing the Service (or any features within the Service) to you or to users generally at SNUGL&apos;s sole discretion, without prior notice to you. You may stop using the Service at any time. You do not need to specifically inform SNUGL when you stop using the Service.
-            </p>
-            <p className="leading-relaxed mt-4">
-              If we decide to change our Terms & Conditions, we will post those changes on this page, and/or update the Terms & Conditions modification date above.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Modifications to Our App</h2>
-            <p className="leading-relaxed">
-              SNUGL reserves the right to modify, suspend or discontinue, temporarily or permanently, the app or any service to which it connects, with or without notice and without liability to you.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Updates to Our App</h2>
-            <p className="leading-relaxed">
-              SNUGL may from time to time provide enhancements or improvements to the features/functionality of the app, which may include patches, bug fixes, updates, upgrades and other modifications (&quot;Updates&quot;).
-            </p>
-            <p className="leading-relaxed mt-4">
-              Updates may modify or delete certain features and/or functionalities of the app. You agree that SNUGL has no obligation to (i) provide any Updates, or (ii) continue to provide or enable any particular features and/or functionalities of the app to you.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Third-Party Services</h2>
-            <p className="leading-relaxed">
-              We may display, include or make available third-party content (including data, information, applications and other products services) or provide links to third-party websites or services (&quot;Third-Party Services&quot;).
-            </p>
-            <p className="leading-relaxed mt-4">
-              You acknowledge and agree that SNUGL shall not be responsible for any Third-Party Services, including their accuracy, completeness, timeliness, validity, copyright compliance, legality, decency, quality or any other aspect thereof. SNUGL does not assume and shall not have any liability or responsibility to you or any other person or entity for any Third-Party Services.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Term and Termination</h2>
-            <p className="leading-relaxed">
-              This Agreement shall remain in effect until terminated by you or SNUGL.
-            </p>
-            <p className="leading-relaxed mt-4">
-              SNUGL may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
-            </p>
-            <p className="leading-relaxed mt-4">
-              This Agreement will terminate immediately, without prior notice from SNUGL, in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the app and all copies thereof from your device.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">No Warranties</h2>
-            <p className="leading-relaxed">
-              The app is provided to you &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, SNUGL, on its own behalf and on behalf of its affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the app, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Limitation of Liability</h2>
-            <p className="leading-relaxed">
-              Notwithstanding any damages that you might incur, the entire liability of SNUGL and any of its suppliers under any provision of this Agreement and your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by you for the app.
-            </p>
-            <p className="leading-relaxed mt-4">
-              To the maximum extent permitted by applicable law, in no event shall SNUGL or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, for loss of data or other information, for business interruption, for personal injury, for loss of privacy arising out of or in any way related to the use of or inability to use the app).
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Severability</h2>
-            <p className="leading-relaxed">
-              If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Entire Agreement</h2>
-            <p className="leading-relaxed">
-              The Agreement constitutes the entire agreement between you and SNUGL regarding your use of the app and supersedes all prior and contemporaneous written or oral agreements between you and SNUGL.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Contact Us</h2>
-            <p className="leading-relaxed">
-              Don&apos;t hesitate to contact us if you have any questions.
-            </p>
-            <p className="mt-4">
-              <strong>Via Email:</strong>{" "}
-              <a href="mailto:info@snugled.com" className="text-blue-600 hover:underline">
-                info@snugled.com
-              </a>
-            </p>
-          </section>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 dark:bg-gray-800 py-6 px-4 mt-12">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <Image src="/logo.svg" alt="SNUGL" width={80} height={18} />
-          </Link>
-          <div className="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
-            <Link href="/features" className="hover:text-gray-900 dark:hover:text-white">Features</Link>
-            <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white">FAQ</Link>
-            <Link href="/agb" className="hover:text-gray-900 dark:hover:text-white">Terms</Link>
-            <Link href="/datenschutz" className="hover:text-gray-900 dark:hover:text-white">Privacy</Link>
-            <Link href="/" className="hover:text-gray-900 dark:hover:text-white">Home</Link>
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Your Suggestions</h2>
+              <p className="leading-relaxed">
+                Any feedback, comments, ideas, improvements or suggestions (collectively, &quot;Suggestions&quot;) provided by you to SNUGL with respect to the app shall remain the sole and exclusive property of SNUGL.
+              </p>
+              <p className="leading-relaxed mt-4">
+                SNUGL shall be free to use, copy, modify, publish, or redistribute the Suggestions for any purpose and in any way without any credit or any compensation to you.
+              </p>
+            </section>
           </div>
-        </div>
-        <div className="max-w-4xl mx-auto mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-500">
-          © 2025 SNUGL. All rights reserved.
-        </div>
-      </footer>
+        </motion.div>
+      </div>
     </div>
   );
 }
