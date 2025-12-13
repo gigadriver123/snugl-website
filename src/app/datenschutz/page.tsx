@@ -6,7 +6,18 @@ import { ArrowLeft } from "lucide-react";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gray-50/50">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Static Background */}
+      <div 
+        className="fixed inset-0 w-full min-h-screen pointer-events-none"
+        style={{
+          backgroundImage: 'url(/Day_BG.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: -1
+        }}
+      />
+
       {/* Animated SVG Background - Back layers (moving left) */}
       <div 
         className="fixed inset-0 w-full min-h-screen pointer-events-none cloudLayerBack"
@@ -18,7 +29,7 @@ export default function Privacy() {
       
       <style jsx global>{`
         .cloudLayerBack {
-          background-image: url(/bg_layer_back.svg);
+          background-image: url(/Day_layer_back.svg);
           background-size: 1206px auto;
           background-repeat: repeat-x;
           background-position: 0 bottom;
@@ -27,7 +38,7 @@ export default function Privacy() {
         }
         
         .cloudLayerFront {
-          background-image: url(/bg_layer_front.svg);
+          background-image: url(/Day_layer_front.svg);
           background-size: 1206px auto;
           background-repeat: repeat-x;
           background-position: 0 bottom;

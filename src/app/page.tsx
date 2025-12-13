@@ -138,8 +138,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gray-50/50">
+    <div className="min-h-screen relative overflow-hidden">
       <FloatingNav />
+
+      {/* Static Background */}
+      <div 
+        className="fixed inset-0 w-full min-h-screen pointer-events-none"
+        style={{
+          backgroundImage: 'url(/Day_BG.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: -1
+        }}
+      />
 
       {/* Animated SVG Background - Back layers (moving left) */}
       <div 
@@ -152,7 +163,7 @@ export default function Home() {
       
       <style jsx global>{`
         .cloudLayerBack {
-          background-image: url(/bg_layer_back.svg);
+          background-image: url(/Day_layer_back.svg);
           background-size: 1206px auto;
           background-repeat: repeat-x;
           background-position: 0 bottom;
@@ -161,7 +172,7 @@ export default function Home() {
         }
         
         .cloudLayerFront {
-          background-image: url(/bg_layer_front.svg);
+          background-image: url(/Day_layer_front.svg);
           background-size: 1206px auto;
           background-repeat: repeat-x;
           background-position: 0 bottom;
