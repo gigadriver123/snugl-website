@@ -163,7 +163,7 @@ export default function Home() {
       
       <style jsx global>{`
         .cloudLayerBack {
-          background-image: url(/Day_layer_back.svg);
+          background-image: url(/bg_layer_back.svg);
           background-size: 1206px auto;
           background-repeat: repeat-x;
           background-position: 0 bottom;
@@ -172,7 +172,7 @@ export default function Home() {
         }
         
         .cloudLayerFront {
-          background-image: url(/Day_layer_front.svg);
+          background-image: url(/bg_layer_front.svg);
           background-size: 1206px auto;
           background-repeat: repeat-x;
           background-position: 0 bottom;
