@@ -8,7 +8,7 @@ export default function Terms() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Static Background */}
-      <div 
+      <div
         className="fixed inset-0 w-full min-h-screen pointer-events-none"
         style={{
           backgroundImage: 'url(/Day_BG.svg)',
@@ -19,14 +19,14 @@ export default function Terms() {
       />
 
       {/* Animated SVG Background - Back layers (moving left) */}
-      <div 
+      <div
         className="fixed inset-0 w-full min-h-screen pointer-events-none cloudLayerBack"
       />
       {/* Animated SVG Background - Front layer (moving right) */}
-      <div 
+      <div
         className="fixed inset-0 w-full min-h-screen pointer-events-none cloudLayerFront"
       />
-      
+
       <style jsx global>{`
         .cloudLayerBack {
           background-image: url(/bg_layer_back.svg);

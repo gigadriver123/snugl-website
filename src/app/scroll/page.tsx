@@ -45,7 +45,7 @@ export default function ScrollPage() {
         this.vy = (Math.random() - 0.5) * 0.1;
         this.pulseSpeed = 0.001 + Math.random() * 0.002;
         this.pulsePhase = Math.random() * Math.PI * 2;
-        
+
         const colors = [
           "rgba(255, 182, 193, 0.4)",  // Light pink
           "rgba(173, 216, 230, 0.4)",  // Light blue
@@ -59,7 +59,7 @@ export default function ScrollPage() {
 
       update(width: number, scrollY: number, time: number) {
         this.x += this.vx;
-        
+
         // Gentle floating motion
         this.y = this.baseY + Math.sin(time * this.pulseSpeed + this.pulsePhase) * 30;
 
@@ -75,7 +75,7 @@ export default function ScrollPage() {
 
       draw(displayY: number) {
         if (!ctx) return;
-        
+
         const gradient = ctx.createRadialGradient(
           this.x, displayY, 0,
           this.x, displayY, this.radius

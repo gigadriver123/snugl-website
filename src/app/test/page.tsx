@@ -50,7 +50,7 @@ export default function TestPage() {
         this.radius = Math.random() * 400 + 250;
         this.vx = (Math.random() - 0.5) * 0.3;
         this.vy = (Math.random() - 0.5) * 0.2;
-        
+
         const colors = [
           "rgba(139, 0, 0, 0.6)",    // Dark red
           "rgba(178, 34, 34, 0.6)",  // Firebrick
@@ -76,7 +76,7 @@ export default function TestPage() {
 
       draw() {
         if (!ctx) return;
-        
+
         const gradient = ctx.createRadialGradient(
           this.x, this.y, 0,
           this.x, this.y, this.radius
@@ -167,7 +167,7 @@ export default function TestPage() {
           <br />
           for Baby Care
         </h1>
-        
+
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl">
           Track sleep, feedings, and precious moments with beautiful animations
         </p>
