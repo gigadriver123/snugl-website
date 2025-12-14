@@ -184,6 +184,18 @@ export default function Home() {
           animation: moveRight 120s linear infinite;
         }
         
+        /* Mobile: smaller clouds */
+        @media (max-width: 768px) {
+          .cloudLayerBack {
+            background-size: 600px auto;
+            animation: moveLeftMobile 60s linear infinite;
+          }
+          .cloudLayerFront {
+            background-size: 600px auto;
+            animation: moveRightMobile 70s linear infinite;
+          }
+        }
+        
         @keyframes moveLeft {
           from {
             background-position-x: 0;
@@ -199,6 +211,24 @@ export default function Home() {
           }
           to {
             background-position-x: 1206px;
+          }
+        }
+        
+        @keyframes moveLeftMobile {
+          from {
+            background-position-x: 0;
+          }
+          to {
+            background-position-x: -600px;
+          }
+        }
+        
+        @keyframes moveRightMobile {
+          from {
+            background-position-x: 0;
+          }
+          to {
+            background-position-x: 600px;
           }
         }
       `}</style>
