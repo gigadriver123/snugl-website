@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function AccountDeletionGuide() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Header */}
       <header className="border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <Link href="/">
@@ -20,6 +21,7 @@ export default function AccountDeletionGuide() {
         </div>
       </header>
 
+      {/* Content */}
       <main className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Konto löschen – Schritt-für-Schritt
@@ -88,7 +90,7 @@ export default function AccountDeletionGuide() {
           </Link>
           <div className="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
             <Link href="/agb" className="hover:text-gray-900 dark:hover:text-white">Terms</Link>
-            <Link href="/datenschutz" className="hover:text-gray-900 dark:hover:text-white">Privacy</Link>
+            <Link href="/privacy" className="hover:text-gray-900 dark:hover:text-white">Privacy</Link>
             <Link href="/" className="hover:text-gray-900 dark:hover:text-white">Home</Link>
           </div>
         </div>
