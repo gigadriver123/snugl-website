@@ -87,7 +87,7 @@ export default function AccountDeletionGuide() {
           className="max-w-4xl mx-auto bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-sm border border-white/50"
         >
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-            Konto löschen – Schritt-für-Schritt
+            Delete Account – Step by Step
           </h1>
           <p className="text-gray-500 mb-8">
             Updated at 2026-01-18
@@ -96,50 +96,48 @@ export default function AccountDeletionGuide() {
           <div className="prose prose-gray max-w-none space-y-8 text-gray-600">
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                Voraussetzungen
+                Prerequisites
               </h2>
               <ul className="list-disc list-inside space-y-2">
-                <li>Du bist in der App angemeldet.</li>
+                <li>You are logged into the app.</li>
                 <li>
-                  Optional: Wenn du ein aktives Abo hast, kündige es vorher im App
-                  Store bzw. Google Play Store.
+                  Optional: If you have an active subscription, cancel it first in the App Store or Google Play Store.
                 </li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                Schritte in der App
+                Steps in the App
               </h2>
               <ol className="list-decimal list-inside space-y-2">
-                <li>Öffne die App.</li>
-                <li>Gehe unten rechts auf <strong>Einstellungen</strong>.</li>
-                <li>Scrolle zum Abschnitt <strong>Konto</strong>.</li>
-                <li>Tippe auf <strong>Konto löschen</strong>.</li>
-                <li>Lies den Hinweis und bestätige die Löschung.</li>
+                <li>Open the app.</li>
+                <li>Go to <strong>Settings</strong> in the bottom right.</li>
+                <li>Scroll to the <strong>Account</strong> section.</li>
+                <li>Tap on <strong>Delete Account</strong>.</li>
+                <li>Read the notice and confirm the deletion.</li>
                 <li>
-                  Die App meldet dich automatisch ab und dein Konto wird gelöscht.
+                  The app will automatically log you out and your account will be deleted.
                 </li>
               </ol>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                Was passiert danach?
+                What Happens Next?
               </h2>
               <ul className="list-disc list-inside space-y-2">
-                <li>Dein Konto und alle zugehörigen Daten werden dauerhaft gelöscht.</li>
-                <li>Eine Wiederherstellung ist nicht möglich.</li>
+                <li>Your account and all associated data will be permanently deleted.</li>
+                <li>Recovery is not possible.</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                Falls du dich nicht einloggen kannst
+                If You Cannot Log In
               </h2>
               <p className="leading-relaxed">
-                Stelle sicher, dass du dich mit dem richtigen Login
-                (E‑Mail/Apple/Google) anmeldest, um die Löschung durchzuführen.
+                Make sure to log in with the correct login method (Email/Apple/Google) to perform the deletion.
               </p>
             </section>
           </div>
