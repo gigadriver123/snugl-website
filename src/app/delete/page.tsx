@@ -94,7 +94,6 @@ export default function AccountDeletionGuide() {
           </p>
 
           <div className="prose prose-gray max-w-none space-y-8 text-gray-600">
-          <div className="prose prose-gray max-w-none space-y-8 text-gray-600">
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
                 Voraussetzungen
