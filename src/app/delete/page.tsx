@@ -25,7 +25,7 @@ export default function AccountDeletionGuide() {
           Konto löschen – Schritt-für-Schritt
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mb-8">
-          Stand: 2026-01-18
+          Updated at 2026-01-18
         </p>
 
         <div className="prose prose-gray dark:prose-invert max-w-none space-y-8 text-gray-600 dark:text-gray-300">
@@ -79,6 +79,23 @@ export default function AccountDeletionGuide() {
           </section>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 dark:bg-gray-800 py-6 px-4 mt-12">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <Link href="/">
+            <Image src="/logo.svg" alt="SNUGL" width={80} height={18} />
+          </Link>
+          <div className="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <Link href="/agb" className="hover:text-gray-900 dark:hover:text-white">Terms</Link>
+            <Link href="/datenschutz" className="hover:text-gray-900 dark:hover:text-white">Privacy</Link>
+            <Link href="/" className="hover:text-gray-900 dark:hover:text-white">Home</Link>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-500">
+          © 2025 SNUGL. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }
